@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { getLoggedInUser } from '../lib/identity'
 
-import Login from './Login'
+import LogIn from './Login'
 import Dashboard from './Dashboard'
 
 function App() {
-  return (
-    <div>
-      <Dashboard></Dashboard>
-    </div>
-  )
+  const [user, setUser] = useState(getLoggedInUser())
+
+  if (user) {
+    return (
+      <div>
+        <Dashboard></Dashboard>
+      </div>
+    )
+  }
 
   return (
     <div>
-      <Login></Login>
+      <LogIn></LogIn>
     </div>
   )
 }
