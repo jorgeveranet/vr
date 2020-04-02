@@ -1,14 +1,7 @@
-import React, { useEffect } from 'react'
-import netlifyIdentity from 'netlify-identity-widget'
-import { persistUser, logoutUser } from '../lib/identity'
+import React from 'react'
 
-function LogIn() {
-  useEffect(() => {
-    netlifyIdentity.on('login', user => persistUser(user))
-    netlifyIdentity.on('logout', () => logoutUser())
-  })
-
-  const handleLogIn = () => netlifyIdentity.open()
+function LogIn(props) {
+  const handleLogIn = () => props.handleLogIn()
 
   return <button onClick={handleLogIn}>Log in</button>
 }

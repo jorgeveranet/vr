@@ -1,9 +1,11 @@
 import React from 'react'
 
-function Dashboard() {
+function Dashboard(props) {
+  const handleLogOut = () => props.handleLogOut()
+
   return (
     <div>
-      <p>Dashboard...</p>
+      <button onClick={handleLogOut}>Log out</button>
     </div>
   )
 }
