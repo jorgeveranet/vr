@@ -11,7 +11,6 @@ function App() {
     netlifyIdentity.on('login', user => {
       netlifyIdentity.close()
       setUser(user)
-      console.log('error', user)
     })
 
     netlifyIdentity.on('logout', () => {
