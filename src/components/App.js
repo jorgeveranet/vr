@@ -6,7 +6,6 @@ import Dashboard from './Dashboard'
 
 function App() {
   const [user, setUser] = useState(netlifyIdentity.currentUser())
-  const [message, setMessage] = useState('')
 
   useEffect(() => {
     netlifyIdentity.on('login', user => {
@@ -19,9 +18,7 @@ function App() {
       setUser(null)
     })
 
-    netlifyIdentity.on('error', err => {
-      setMessage(`Error: ${err.message}`)
-    })
+    netlifyIdentity.on('error', err => {})
   })
 
   const handleLogIn = () => {
@@ -42,7 +39,6 @@ function App() {
 
   return (
     <div>
-      <p>{message}</p>
       <Home handleLogIn={handleLogIn}></Home>
     </div>
   )
