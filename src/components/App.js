@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import netlifyIdentity from 'netlify-identity-widget'
 
-import LogIn from './Login'
+import Home from './Home'
 import Dashboard from './Dashboard'
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div>
-      <LogIn handleLogIn={handleLogIn}></LogIn>
+      <Home handleLogIn={handleLogIn}></Home>
     </div>
   )
 }
