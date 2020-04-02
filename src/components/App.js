@@ -28,19 +28,9 @@ function App() {
     netlifyIdentity.logout()
   }
 
-  if (user) {
-    return (
-      <div>
-        <Dashboard handleLogOut={handleLogout}></Dashboard>
-      </div>
-    )
-  }
+  if (user) return <Dashboard handleLogOut={handleLogout}></Dashboard>
 
-  return (
-    <div>
-      <Home handleLogIn={handleLogIn}></Home>
-    </div>
-  )
+  return <Home handleLogIn={handleLogIn}></Home>
 }
 
 export default App
